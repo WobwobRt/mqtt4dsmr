@@ -1,7 +1,7 @@
 FROM python:3.13-alpine
 WORKDIR /opt/mqtt4dsmr
 COPY requirements.txt requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --root-user-action ignore --no-cache-dir -r requirements.txt
 
 COPY *.py .
 ARG VERSION_TAG=unknown
